@@ -1,5 +1,5 @@
 
-
+//imports
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -13,8 +13,7 @@ import javax.sound.sampled.*;
 	 * Creates the Welcome Screen
 	 */
 
-class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
-{
+class Farm extends JFrame implements ActionListener, KeyListener, MouseListener{
 	private JLabel welcomeText;
 	private JPanel welcomeButtons;
 	private boolean on = true; 
@@ -23,8 +22,7 @@ class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
 	/**
 	 * Creates the welcome panels with buttons 
 	 */
-	public Farm()
-	{
+	public Farm(){
 		//JFrame stuff and music
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setSize(600,600);
@@ -75,8 +73,7 @@ class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
 	 * @param e the ActionEvent button pressed
 	 */
 	
-	public void actionPerformed(ActionEvent e)
-	{
+	public void actionPerformed(ActionEvent e){
 			
 		if (e.getSource() == info)
 			new Info();
@@ -86,10 +83,8 @@ class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
 	 * When Escape is pressed program closes
 	 * @param e the KeyEvent representing the pressed key
 	 */
-	public void keyPressed(KeyEvent e)
-	{
-		if (e.getKeyCode() == KeyEvent.VK_ESCAPE)
-		{
+	public void keyPressed(KeyEvent e){
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
 			on = false; 
 			this.dispose();
 		}
@@ -100,8 +95,7 @@ class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
 	 * Needed to satisfy the KeyListener
 	 * @param e the KeyEvent representing the released key
 	 */
-	public void keyReleased(KeyEvent e)
-	{
+	public void keyReleased(KeyEvent e){
 		//no code needed here
 	}
 
@@ -109,8 +103,7 @@ class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
 	 * Needed to satisfy the KeyListener
 	 * @param e not used
 	 */
-	public void keyTyped(KeyEvent e)
-	{
+	public void keyTyped(KeyEvent e){
       	//no code needed here
 	}
 
@@ -118,24 +111,20 @@ class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
 	/**
 	 * Plays music 
 	 */
-	public void music() 
-	{
+	public void music() {
 		
-		try 
-		{
+		try {
 			AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Background.wav")));
 			Clip clip = AudioSystem.getClip();
 			clip.open(is);
    			
-          	if(on)
-          	{
+          	if(on){
           		clip.start();
             	clip.loop(clip.LOOP_CONTINUOUSLY);
           	}              
   		} 
   
-  		catch (Exception e) 
-  		{
+  		catch (Exception e) {
    			System.out.println(e.getMessage());
   		}
  
@@ -146,8 +135,7 @@ class Farm extends JFrame implements ActionListener, KeyListener, MouseListener
  	* Identifies the location of the mouse click and launches the repaint method
  	* @param event the MouseEvent which triggers the method
  	*/
-  	public void mousePressed(MouseEvent event)
-   	{  
+  	public void mousePressed(MouseEvent event){  
    		 
    		 String name = JOptionPane.showInputDialog("What's your name?", null);
 			new Play(name);
