@@ -13,8 +13,7 @@ import javax.sound.sampled.*;
 	/**
 	 * Creates the Play Screen to add animals
 	 */
-class Play extends JFrame implements ActionListener 
-{
+class Play extends JFrame implements ActionListener {
 	private JButton addAnimal;
 	private JPanel button;
 	private JPanel back;
@@ -26,8 +25,7 @@ class Play extends JFrame implements ActionListener
 	 * Creates the play dialogues
 	 *  @param name the String name of the farm
 	 */
-	public Play(String name)
-	{
+	public Play(String name){
 		//JFrame stuff and music
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setSize(600,600);
@@ -92,8 +90,7 @@ class Play extends JFrame implements ActionListener
 	 * When play is pressed, a dialogue shows to name farm or info pops up
 	 * @param e the ActionEvent button pressed
 	 */
-	public void actionPerformed(ActionEvent e)
-	{
+	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == addAnimal)
 			addM();
 		
@@ -103,44 +100,35 @@ class Play extends JFrame implements ActionListener
 	/**
 	 * Adds the animal to the screen and plays a sound
 	 */
-	public void addM() 
-	{
+	public void addM() {
 		String animal = JOptionPane.showInputDialog("What animal would you like to see?", null);
 		
-		if (animal != null)
-		{	 
-			if(animal.equalsIgnoreCase("cow"))
-			{
+		if (animal != null){	 
+			if(animal.equalsIgnoreCase("cow")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Cow.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Cow.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 	 		}	
-			else if(animal.equalsIgnoreCase("bunny"))
-			{
+			else if(animal.equalsIgnoreCase("bunny")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Bunny.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Bunny.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("bull"))
-			{
+			else if(animal.equalsIgnoreCase("bull")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Bull.jpg"))));
 					try 
 					{
@@ -149,143 +137,115 @@ class Play extends JFrame implements ActionListener
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}
-			else if(animal.equalsIgnoreCase("chicken"))
-			{
+			else if(animal.equalsIgnoreCase("chicken")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Chicken.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Chicken.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("rooster"))
-			{
+			else if(animal.equalsIgnoreCase("rooster")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Rooster.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Rooster.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}	
 			}
-			else if(animal.equalsIgnoreCase("duck"))
-			{
+			else if(animal.equalsIgnoreCase("duck")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Duck.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Duck.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("goat"))
-			{
+			else if(animal.equalsIgnoreCase("goat")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Goat.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Goat.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("horse"))
-			{
+			else if(animal.equalsIgnoreCase("horse")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Horse.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Horse.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("lamb"))
-			{
+			else if(animal.equalsIgnoreCase("lamb")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Lamb.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Lamb.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("pig"))
-			{
+			else if(animal.equalsIgnoreCase("pig")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Pig.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Pig.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("pony"))
-			{
+			else if(animal.equalsIgnoreCase("pony")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Pony.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Pony.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}	
-			else if(animal.equalsIgnoreCase("sheep"))
-			{
+			else if(animal.equalsIgnoreCase("sheep")){
 				back.add(new JLabel(new ImageIcon(getClass().getResource("Sheep.jpg"))));
-					try 
-					{
+					try {
 		   				AudioInputStream is = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("Sheep.wav")));
 						Clip clip = AudioSystem.getClip();
 						clip.open(is);
 	   		        	clip.start();
 	               	} 
-	   				catch (Exception e) 
-	  				{
+	   				catch (Exception e) {
 	   				System.out.println(e.getMessage());
 	  				}
 			}
@@ -298,10 +258,6 @@ class Play extends JFrame implements ActionListener
 		setVisible(true);
 	
     }
-	
-	
-	
-
-		
+			
 	
 }
